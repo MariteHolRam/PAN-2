@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masterclass: Proceso de Atención Nutricia (PAN/ADIME) en Diabetes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container" id="app">
+    <!-- Main Presentation Viewer Area -->
+    <div class="presentation-canvas">
+      <!-- Navbar -->
+      <nav class="top-navbar">
+        <div class="brand-container">
+          <div class="brand-logo">D</div>
+          <div class="brand-name">PAN en Diabetes Mellitus Tipo 1 y 2</div>
+        </div>
+        <div class="navbar-controls">
+          <button class="btn btn-secondary" id="theme-toggle" title="Cambiar tema">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button class="btn btn-primary" id="notes-toggle-btn" title="Mostrar/ocultar guion del ponente">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Guion del Ponente
+          </button>
+        </div>
+      </nav>
+
+      <!-- Slides Container -->
+      <div class="slides-container" id="slides-viewport">
+        
+        <!-- DIAPOSITIVA 1: PORTADA -->
+        <div class="slide active" id="slide-1">
+          <div class="slide-header">
+            <span class="slide-tag">Diplomado en Nutrición Clínica</span>
+            <h1 class="slide-title">Proceso de Atención Nutricia en Diabetes Mellitus Tipo 1 y Tipo 2</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>La Ciencia de la Estandarización Clínica</h3>
+              <p>Capacitación magistral interactiva para profesionales de la salud. Aprende a aplicar el modelo ADIME con rigor científico, conteo de carbohidratos avanzado, dosificación de insulina por macronutrientes y monitoreo continuo según las guías ADA 2025.</p>
+              <div style="display:flex; gap:10px; margin-top:10px;">
+                <span class="tag-badge tag-badge-success">ADA 2025</span>
+                <span class="tag-badge tag-badge-success">EASD / ISPAD</span>
+                <span class="tag-badge tag-badge-success">eNCPT</span>
+              </div>
+            </div>
+            <div class="slide-visual">
+              <!-- SVG Hospital-Nutrition Visual -->
+              <svg viewBox="0 0 400 400" width="85%" height="85%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="circle-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="var(--primary)" />
+                    <stop offset="100%" stop-color="var(--secondary)" />
+                  </linearGradient>
+                </defs>
+                <circle cx="200" cy="200" r="140" fill="url(#circle-grad)" opacity="0.15" />
+                <rect x="120" y="80" width="160" height="240" rx="16" fill="var(--card-bg)" stroke="var(--border-color)" stroke-width="2" />
+                <!-- Apple / healthy food symbol inside -->
+                <circle cx="200" cy="180" r="30" fill="var(--secondary)" opacity="0.8" />
+                <path d="M198 150 Q205 140 215 145" stroke="var(--text-main)" stroke-width="3" stroke-linecap="round" />
+                <!-- Glucometer trace inside -->
+                <path d="M150 260 H250 M170 280 H230" stroke="var(--border-color)" stroke-width="2" />
+                <!-- Syringe / medical cross -->
+                <rect x="190" y="240" width="20" height="40" rx="4" fill="var(--primary)" opacity="0.9" />
+                <text x="200" y="265" fill="white" font-size="14" font-weight="bold" text-anchor="middle">+</text>
+                <!-- Title inside board -->
+                <text x="200" y="115" fill="var(--text-main)" font-size="12" font-weight="bold" text-anchor="middle" font-family="var(--font-title)">MODELO ADIME</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 2: ACTIVIDAD INICIAL -->
+        <div class="slide" id="slide-2">
+          <div class="slide-header">
+            <span class="slide-tag">Actividad Inicial</span>
+            <h1 class="slide-title">¿Cuál considera que es el principal reto nutricional en las personas con diabetes?</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Participación en Directo</h3>
+              <p>Colegas, antes de iniciar la revisión fisiopatológica, me gustaría conocer su perspectiva. Interactúe con la encuesta seleccionando la opción que mejor represente su experiencia clínica cotidiana.</p>
+              
+              <div class="survey-widget" id="slide-2-survey">
+                <div class="quiz-options">
+                  <button class="quiz-option" data-id="1">A) Lograr la adherencia a largo plazo al plan de alimentación.</button>
+                  <button class="quiz-option" data-id="2">B) Enseñar correctamente el conteo de carbohidratos.</button>
+                  <button class="quiz-option" data-id="3">C) Adaptar las metas glucémicas a los recursos del paciente.</button>
+                  <button class="quiz-option" data-id="4">D) Evitar la frustración y la fatiga por diabetes.</button>
+                </div>
+              </div>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; justify-content:center;">
+              <h4 style="font-family:var(--font-title); font-weight:700; margin-bottom:10px;">Distribución de Respuestas de la Audiencia</h4>
+              <div class="survey-results" id="survey-results-box" style="width:85%; display:none;">
+                <div class="survey-bar-container">
+                  <div class="survey-bar-label"><span>A) Adherencia</span><span id="bar-val-1">0%</span></div>
+                  <div class="survey-bar-bg"><div class="survey-bar-fill" id="bar-fill-1"></div></div>
+                </div>
+                <div class="survey-bar-container">
+                  <div class="survey-bar-label"><span>B) Conteo Carbohidratos</span><span id="bar-val-2">0%</span></div>
+                  <div class="survey-bar-bg"><div class="survey-bar-fill" id="bar-fill-2"></div></div>
+                </div>
+                <div class="survey-bar-container">
+                  <div class="survey-bar-label"><span>C) Metas y Recursos</span><span id="bar-val-3">0%</span></div>
+                  <div class="survey-bar-bg"><div class="survey-bar-fill" id="bar-fill-3"></div></div>
+                </div>
+                <div class="survey-bar-container">
+                  <div class="survey-bar-label"><span>D) Fatiga por Diabetes</span><span id="bar-val-4">0%</span></div>
+                  <div class="survey-bar-bg"><div class="survey-bar-fill" id="bar-fill-4"></div></div>
+                </div>
+              </div>
+              <p id="survey-placeholder-text" style="color:var(--text-muted); font-size:0.9rem; font-style:italic;">Haga clic en una opción de la izquierda para emitir su voto clínico.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 1: COMPRENDIENDO LA DIABETES -->
+        
+        <!-- DIAPOSITIVA 3: EPIDEMIOLOGÍA -->
+        <div class="slide" id="slide-3">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 1: Comprendiendo la Diabetes</span>
+            <h1 class="slide-title">Panorama Epidemiológico Mundial y Nacional</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>La Pandemia Silenciosa</h3>
+              <p>Según el Atlas de la IDF (2023-2025):</p>
+              <ul>
+                <li>Más de <strong>537 millones</strong> de adultos viven con diabetes a nivel mundial.</li>
+                <li>Se estima que para el año 2045 la cifra superará los <strong>783 millones</strong>.</li>
+                <li>En México, la prevalencia nacional en adultos supera el <strong>18%</strong> (Ensanut 2022-2024), con un alarmante subdiagnóstico de casi el 30%.</li>
+              </ul>
+              <p style="margin-top:10px; font-size:0.85rem; color:var(--danger)">⚠️ La diabetes representa el principal factor de gasto en salud y causa de discapacidad en el país.</p>
+            </div>
+            <div class="slide-visual">
+              <!-- SVG Map / Data graphics -->
+              <svg viewBox="0 0 400 300" width="90%" height="90%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- World Map abstract -->
+                <rect x="20" y="20" width="360" height="260" rx="12" fill="var(--card-bg)" opacity="0.05" />
+                <circle cx="100" cy="120" r="30" fill="var(--danger)" opacity="0.6" />
+                <circle cx="280" cy="180" r="45" fill="var(--danger)" opacity="0.6" />
+                <circle cx="200" cy="140" r="20" fill="var(--danger)" opacity="0.6" />
+                
+                <text x="100" y="125" fill="white" font-size="11" font-weight="bold" text-anchor="middle">10.5%</text>
+                <text x="280" y="185" fill="white" font-size="12" font-weight="bold" text-anchor="middle">18.3%</text>
+                <text x="200" y="145" fill="white" font-size="10" font-weight="bold" text-anchor="middle">12%</text>
+                
+                <text x="200" y="260" fill="var(--text-main)" font-size="11" font-weight="bold" text-anchor="middle">Prevalencia de Diabetes en Población Adulta</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 4: ¿QUÉ ES LA DIABETES? -->
+        <div class="slide" id="slide-4">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 1: Comprendiendo la Diabetes</span>
+            <h1 class="slide-title">¿Qué es la Diabetes? Definición Simplificada</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Definición Médica Integrada</h3>
+              <p>Es un grupo de enfermedades metabólicas caracterizado por **hiperglucemia crónica** resultante de defectos en la secreción de insulina, en la acción de la misma, o en ambos procesos.</p>
+              <div style="background-color:rgba(2,132,199,0.05); padding:10px; border-radius:var(--radius-sm); border-left:4px solid var(--primary); font-size:0.85rem;">
+                <strong>Fisiopatología base:</strong> La glucosa se acumula en el torrente sanguíneo en lugar de ser absorbida por las células, lo que a largo plazo daña vasos sanguíneos y órganos.
+              </div>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 300" width="80%" height="80%">
+                <!-- Blood vessel mockup -->
+                <rect x="20" y="80" width="260" height="140" rx="20" fill="#fee2e2" stroke="#fca5a5" stroke-width="3" />
+                <text x="150" y="65" fill="var(--text-main)" font-size="12" font-weight="bold" text-anchor="middle">Torrente Sanguíneo (Hiperglucemia)</text>
+                <!-- Glucose molecules (yellow circles) -->
+                <circle cx="50" cy="130" r="10" fill="var(--accent)" />
+                <circle cx="100" cy="160" r="10" fill="var(--accent)" />
+                <circle cx="160" cy="120" r="10" fill="var(--accent)" />
+                <circle cx="210" cy="170" r="10" fill="var(--accent)" />
+                <circle cx="250" cy="130" r="10" fill="var(--accent)" />
+                <!-- Label Glucosa -->
+                <text x="160" y="124" fill="white" font-size="9" font-weight="bold" text-anchor="middle">G</text>
+                <!-- Red Blood cells -->
+                <circle cx="70" cy="170" r="15" fill="#ef4444" opacity="0.7" />
+                <circle cx="190" cy="150" r="15" fill="#ef4444" opacity="0.7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 5: DM1 VS DM2 COMPARATIVA -->
+        <div class="slide" id="slide-5">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 1: Comprendiendo la Diabetes</span>
+            <h1 class="slide-title">Diabetes Tipo 1 vs. Diabetes Tipo 2</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text" style="max-width:35%;">
+              <h3>Diferenciación Clínica Integral</h3>
+              <p>Es indispensable comprender que, aunque comparten la hiperglucemia, la causa raíz y las estrategias de intervención nutricia son categóricamente distintas.</p>
+              <p style="font-size:0.85rem; color:var(--text-muted)">💡 <em>En DM1 el foco es el acoplamiento insulina-CHO. En DM2 es la sensibilidad a la insulina y el control de la adiposidad.</em></p>
+            </div>
+            <div class="slide-visual" style="max-width:65%;">
+              <div class="comparison-table-container">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Característica</th>
+                      <th>Diabetes Tipo 1 (DM1)</th>
+                      <th>Diabetes Tipo 2 (DM2)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Fisiopatología</strong></td>
+                      <td>Autoinmune (destrucción de células &beta;).</td>
+                      <td>Resistencia a la insulina + deficiencia progresiva.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Inicio clínico</strong></td>
+                      <td>Abrupto, común en niños y jóvenes.</td>
+                      <td>Gradual, común en adultos.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Peso corporal</strong></td>
+                      <td>Frecuentemente normopeso o pérdida súbita.</td>
+                      <td>Frecuentemente sobrepeso u obesidad.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Tratamiento médico</strong></td>
+                      <td>Insulinoterapia desde el diagnóstico (vital).</td>
+                      <td>Fármacos orales, análogos GLP-1 y/o insulina.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 6: FISIOPATOLOGÍA DM1 -->
+        <div class="slide" id="slide-6">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 1: Comprendiendo la Diabetes</span>
+            <h1 class="slide-title">Fisiopatología de la Diabetes Tipo 1: Ataque Inmune</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Destrucción Selectiva de Células Beta</h3>
+              <p>En la DM1, los linfocitos T del sistema inmunológico no reconocen a las células beta del páncreas y las destruyen. Al destruirse más del 90%, el páncreas pierde la capacidad de producir insulina.</p>
+              <div style="background-color:rgba(239,68,68,0.05); padding:10px; border-radius:var(--radius-sm); border-left:4px solid var(--danger); font-size:0.85rem; margin-bottom:10px;">
+                <strong>Consecuencia metabólica:</strong> Deficiencia absoluta de insulina. Sin insulina, la glucosa no puede entrar a la célula, lo que lleva a cetoacidosis si no se administra de manera exógena.
+              </div>
+              <button class="btn btn-primary" id="btn-simulate-dm1">Simular Ataque Inmunológico</button>
+            </div>
+            <div class="slide-visual">
+              <div class="patho-container">
+                <div class="patho-stage">
+                  <!-- Pancreas / beta cell graphic -->
+                  <svg viewBox="0 0 300 200" width="90%" height="90%" id="svg-dm1-sim">
+                    <!-- Normal Pancreas outline -->
+                    <path d="M40 100 C 60 70, 180 80, 240 60 C 270 50, 290 80, 260 120 C 220 140, 100 130, 40 100 Z" fill="#fbcfe8" stroke="#db2777" stroke-width="2" opacity="0.6"/>
+                    <!-- Healthy Beta Cells -->
+                    <circle cx="80" cy="95" r="10" fill="#10b981" class="patho-cell" id="bcell-1"/>
+                    <circle cx="120" cy="90" r="10" fill="#10b981" class="patho-cell" id="bcell-2"/>
+                    <circle cx="160" cy="100" r="10" fill="#10b981" class="patho-cell" id="bcell-3"/>
+                    
+                    <!-- Immune Cells (T-cells) ready to attack -->
+                    <circle cx="220" cy="140" r="8" fill="#ef4444" class="immune-tcell" id="tcell-1"/>
+                    <circle cx="240" cy="110" r="8" fill="#ef4444" class="immune-tcell" id="tcell-2"/>
+                    
+                    <!-- Labels -->
+                    <text x="120" y="190" fill="var(--text-main)" font-size="10" font-weight="bold" text-anchor="middle" id="patho-dm1-status">Células Beta del Páncreas Saludables (Producción de Insulina)</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 7: FISIOPATOLOGÍA DM2 -->
+        <div class="slide" id="slide-7">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 1: Comprendiendo la Diabetes</span>
+            <h1 class="slide-title">Fisiopatología de la Diabetes Tipo 2: Resistencia a la Insulina</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>La Llave que no Abre la Cerradura</h3>
+              <p>En la DM2, el páncreas sí secreta insulina, pero los receptores celulares en el músculo, tejido adiposo e hígado están bloqueados por lípidos intracelulares y citoquinas inflamatorias.</p>
+              <div style="background-color:rgba(245,158,11,0.05); padding:10px; border-radius:var(--radius-sm); border-left:4px solid var(--accent); font-size:0.85rem; margin-bottom:10px;">
+                <strong>Resistencia a la insulina:</strong> La llave (insulina) no encaja en la cerradura (receptor), impidiendo que las compuertas GLUT4 se abran para el paso de la glucosa.
+              </div>
+              <button class="btn btn-primary" id="btn-simulate-dm2">Intentar Abrir Cerradura (Insulina)</button>
+            </div>
+            <div class="slide-visual">
+              <div class="patho-container">
+                <div class="patho-stage">
+                  <!-- Receptor blockage diagram -->
+                  <svg viewBox="0 0 300 200" width="90%" height="90%" id="svg-dm2-sim">
+                    <!-- Cell Membrane -->
+                    <line x1="20" y1="140" x2="280" y2="140" stroke="#3b82f6" stroke-width="8" />
+                    <!-- Glucose GLUT4 gate -->
+                    <rect x="70" y="130" width="40" height="20" fill="#ef4444" id="glut4-gate" />
+                    <text x="90" y="125" fill="var(--text-main)" font-size="8" text-anchor="middle">Compuerta GLUT4</text>
+                    
+                    <!-- Insulin Receptor -->
+                    <path d="M190 140 V110 H210 V140" fill="none" stroke="#f59e0b" stroke-width="4" />
+                    <!-- Receptor Lock -->
+                    <circle cx="200" cy="110" r="10" fill="#f59e0b" />
+                    
+                    <!-- Insulin Key -->
+                    <path d="M200 40 V90" stroke="#10b981" stroke-width="4" stroke-linecap="round" id="insulin-key" />
+                    <circle cx="200" cy="35" r="12" fill="#10b981" id="insulin-head" />
+                    
+                    <!-- Lipotoxic blockage (red fat drops blocking) -->
+                    <circle cx="200" cy="100" r="6" fill="#ef4444" id="fat-block" />
+                    
+                    <!-- Labels -->
+                    <text x="150" y="190" fill="var(--text-main)" font-size="10" font-weight="bold" text-anchor="middle" id="patho-dm2-status">Lipotoxicidad bloquea el receptor de Insulina</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 8: COMPLICACIONES -->
+        <div class="slide" id="slide-8">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 1: Comprendiendo la Diabetes</span>
+            <h1 class="slide-title">Complicaciones Agudas y Crónicas de la Diabetes</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>El Daño Multisistémico</h3>
+              <p>El descontrol glucémico crónico lesiona la microvasculatura y macrovasculatura del cuerpo humano.</p>
+              <ul>
+                <li><strong>Microvasculares:</strong> Retinopatía (ceguera), Nefropatía (insuficiencia renal) y Neuropatía (pérdida de sensibilidad).</li>
+                <li><strong>Macrovasculares:</strong> Infartos al miocardio, accidente cerebrovascular (ACV) y enfermedad arterial periférica (pie diabético).</li>
+              </ul>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">💡 <em>Pase el cursor o haga clic en los círculos del mapa corporal para ver las complicaciones asociadas.</em></p>
+            </div>
+            <div class="slide-visual">
+              <div class="bodymap-container">
+                <!-- Human Body Silhouette SVG -->
+                <svg viewBox="0 0 200 320" class="body-svg">
+                  <!-- Silhouette -->
+                  <path d="M100 20 C108 20, 115 28, 115 38 C115 48, 108 55, 100 55 C92 55, 85 48, 85 38 C85 28, 92 20, 100 20 Z M90 60 H110 L115 110 H130 L125 180 H112 V290 H88 V180 H75 L70 110 H85 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
+                </svg>
+                <!-- Hotspots -->
+                <div class="body-hotspot" style="top: 10%; left: 49%;" data-id="brain">C</div>
+                <div class="body-hotspot" style="top: 15%; left: 56%;" data-id="eyes">O</div>
+                <div class="body-hotspot" style="top: 32%; left: 45%;" data-id="heart">H</div>
+                <div class="body-hotspot" style="top: 45%; left: 52%;" data-id="kidney">R</div>
+                <div class="body-hotspot" style="top: 90%; left: 43%;" data-id="foot">P</div>
+                
+                <!-- Info Display overlay -->
+                <div class="body-info-panel" id="body-info-panel">
+                  Haga clic en un hotspot para ver el detalle clínico de la complicación.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 2: APLICACIÓN DEL PROCESO DE ATENCIÓN NUTRICIA -->
+        
+        <!-- DIAPOSITIVA 9: INTRODUCCIÓN AL PAN -->
+        <div class="slide" id="slide-9">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 2: Aplicación del PAN</span>
+            <h1 class="slide-title">Introducción al Proceso de Atención Nutricia (PAN)</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>El Modelo Estandarizado ADIME</h3>
+              <p>El PAN es una metodología sistemática que permite tomar decisiones críticas basadas en evidencia científica. Comprende cuatro etapas interconectadas:</p>
+              <ol>
+                <li><strong>Evaluación (Assessment):</strong> Recopilación y análisis de datos en 5 dominios.</li>
+                <li><strong>Diagnóstico (Diagnosis):</strong> Redacción del diagnóstico PES con taxonomía estandarizada.</li>
+                <li><strong>Intervención:</strong> Planeación e implementación de planes dietéticos y educación.</li>
+                <li><strong>Monitoreo y Evaluación:</strong> Medición del progreso de los signos/síntomas declarados.</li>
+              </ol>
+            </div>
+            <div class="slide-visual">
+              <!-- Inline SVG ADIME cycle -->
+              <svg viewBox="0 0 300 300" width="85%" height="85%">
+                <circle cx="150" cy="150" r="100" stroke="var(--border-color)" stroke-width="2" stroke-dasharray="5 5" fill="none" />
+                
+                <circle cx="150" cy="50" r="24" fill="var(--primary)" />
+                <text x="150" y="54" fill="white" font-size="12" font-weight="bold" text-anchor="middle">A</text>
+                
+                <circle cx="250" cy="150" r="24" fill="var(--primary)" />
+                <text x="250" y="154" fill="white" font-size="12" font-weight="bold" text-anchor="middle">D</text>
+                
+                <circle cx="150" cy="250" r="24" fill="var(--secondary)" />
+                <text x="150" y="254" fill="white" font-size="12" font-weight="bold" text-anchor="middle">I</text>
+                
+                <circle cx="50" cy="150" r="24" fill="var(--secondary)" />
+                <text x="50" y="154" fill="white" font-size="12" font-weight="bold" text-anchor="middle">M/E</text>
+
+                <!-- Arrows -->
+                <path d="M 170 60 L 230 130" stroke="var(--primary)" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+                <path d="M 235 170 L 170 235" stroke="var(--primary)" stroke-width="3" fill="none" />
+                <path d="M 130 235 L 70 170" stroke="var(--secondary)" stroke-width="3" fill="none" />
+                <path d="M 70 130 L 130 65" stroke="var(--secondary)" stroke-width="3" fill="none" />
+                
+                <text x="150" y="155" fill="var(--text-main)" font-size="12" font-weight="bold" text-anchor="middle" font-family="var(--font-title)">CICLO PAN</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 3: EVALUACIÓN NUTRICIA -->
+        
+        <!-- DIAPOSITIVA 10: CHECKLIST DE RECOLECCIÓN -->
+        <div class="slide" id="slide-10">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 3: Evaluación Nutricia</span>
+            <h1 class="slide-title">¿Qué información debe recopilar el nutriólogo?</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Checklist de Recopilación Sistemática</h3>
+              <p>Colegas, en personas con diabetes la recolección de datos debe ser exhaustiva y no omitir factores clínicos determinantes.</p>
+              <div style="background-color:rgba(2,132,199,0.05); padding:10px; border-radius:var(--radius-sm); border-left:4px solid var(--primary); font-size:0.85rem; margin-bottom:10px;">
+                <strong>Objetivo:</strong> Identificar barreras de adherencia, capacidad de auto-monitoreo e impacto de tratamientos médicos farmacológicos.
+              </div>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; justify-content:flex-start; align-items:stretch; padding:15px;">
+              <h4 style="font-family:var(--font-title); font-weight:700; margin-bottom:10px;">Checklist Interactivo de Assessment</h4>
+              <div class="check-list-item">
+                <input type="checkbox" id="eval1" checked>
+                <label for="eval1"><strong>(CH):</strong> Tratamiento farmacológico e historial médico de diabetes.</label>
+              </div>
+              <div class="check-list-item">
+                <input type="checkbox" id="eval2" checked>
+                <label for="eval2"><strong>(AD):</strong> Circunferencia de cintura e IMC (composición corporal).</label>
+              </div>
+              <div class="check-list-item">
+                <input type="checkbox" id="eval3" checked>
+                <label for="eval3"><strong>(BD):</strong> HbA1c, perfil lipídico, glucemia capilar y función renal (TFG).</label>
+              </div>
+              <div class="check-list-item">
+                <input type="checkbox" id="eval4" checked>
+                <label for="eval4"><strong>(FH):</strong> Patrón alimentario habitual, distribución e ingesta de CHO.</label>
+              </div>
+              <div class="check-list-item">
+                <input type="checkbox" id="eval5">
+                <label for="eval5"><strong>(PD):</strong> Presión arterial, pérdida de sensibilidad en extremidades.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 11: HISTORIA CLÍNICA -->
+        <div class="slide" id="slide-11">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 3: Evaluación Nutricia</span>
+            <h1 class="slide-title">Historia Clínica y Antecedentes (CH)</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>La Raíz del Paciente</h3>
+              <p>El dominio de **Historial del Cliente (CH)** aporta el contexto social y clínico:</p>
+              <ul>
+                <li><strong>Antecedentes médicos:</strong> Años de evolución de la diabetes, presencia de comorbilidades.</li>
+                <li><strong>Farmacología:</strong> Tipo de insulina (rápida, intermedia, basal), hipoglucemiantes orales (metformina, iSGLT2, etc.).</li>
+                <li><strong>Psicodiabetología:</strong> Depresión por diabetes, barreras económicas y redes de apoyo familiar.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="90%" height="90%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="260" height="160" rx="12" fill="var(--card-bg)" stroke="var(--border-color)" stroke-width="2" />
+                <path d="M50 50 H250 M50 90 H250 M50 130 H250" stroke="var(--border-color)" stroke-width="1.5" stroke-dasharray="4 4" />
+                <text x="50" y="45" fill="var(--primary)" font-size="10" font-weight="bold">FÁRMACOS Y DOSIS</text>
+                <text x="50" y="85" fill="var(--primary)" font-size="10" font-weight="bold">TIEMPO DE EVOLUCIÓN</text>
+                <text x="50" y="125" fill="var(--primary)" font-size="10" font-weight="bold">SOPORTE FAMILIAR Y PSICOSOCIAL</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 12: ANTROPOMETRÍA -->
+        <div class="slide" id="slide-12">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 3: Evaluación Nutricia</span>
+            <h1 class="slide-title">Evaluación Antropométrica (AD)</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Más Allá de la Báscula</h3>
+              <p>En el dominio **Antropométrico (AD)** evaluamos:</p>
+              <ul>
+                <li><strong>IMC:</strong> Identificar sobrepeso u obesidad clase I, II o III.</li>
+                <li><strong>Circunferencia de Cintura:</strong> Riesgo cardiometabólico (&ge;80 cm en mujeres, &ge;90 cm en hombres en población latina).</li>
+                <li><strong>Composición Corporal:</strong> Masa grasa y masa muscular, esenciales para modular la resistencia a la insulina.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Scale & tape illustration -->
+                <rect x="100" y="50" width="100" height="100" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="3" />
+                <circle cx="150" cy="100" r="30" fill="white" stroke="#94a3b8" stroke-width="2" />
+                <!-- Dial needle -->
+                <line x1="150" y1="100" x2="165" y2="85" stroke="var(--danger)" stroke-width="3" stroke-linecap="round" />
+                
+                <!-- Measurement tape -->
+                <path d="M40 160 C 100 140, 200 180, 260 160" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" />
+                <path d="M40 160 C 100 140, 200 180, 260 160" fill="none" stroke="white" stroke-width="2" stroke-dasharray="5 5" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 13: BIOQUÍMICA -->
+        <div class="slide" id="slide-13">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 3: Evaluación Nutricia</span>
+            <h1 class="slide-title">Evaluación Bioquímica (BD) y Metas Metabólicas</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Interpretación Bioquímica de Precisión</h3>
+              <p>Los biomarcadores indican el estado metabólico real del paciente:</p>
+              <ul>
+                <li><strong>HbA1c:</strong> Control de glucemia de los últimos 3 meses (Meta general: &lt;7.0%).</li>
+                <li><strong>Glucosa de ayuno:</strong> Excursión hepática nocturna (Meta: 80-130 mg/dL).</li>
+                <li><strong>Creatinina y TFG:</strong> Descarte de daño glomerular por nefropatía (TFG &lt;60 mL/min/1.73m² requiere ajuste de proteínas).</li>
+              </ul>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; gap:10px; justify-content:center;">
+              <div class="quiz-widget" style="width:90%;">
+                <h4 style="font-size:0.85rem; font-family:var(--font-title); font-weight:700;">Interprete: HbA1c de 8.8% y TFG de 45 mL/min</h4>
+                <div style="font-size:0.8rem; line-height:1.4; margin-top:5px; color:var(--danger)">
+                  ⚠️ <strong>Alerta Clínica:</strong> Descontrol glucémico severo + Enfermedad Renal Crónica Estadio 3b. Requiere restricción proteica a 0.8g/kg/día y metas de HbA1c flexibilizadas.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 14: DIETÉTICA -->
+        <div class="slide" id="slide-14">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 3: Evaluación Nutricia</span>
+            <h1 class="slide-title">Evaluación Dietética (FH)</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Análisis Exhaustivo de Ingesta</h3>
+              <p>En el dominio **Dietético (FH)** debemos determinar:</p>
+              <ul>
+                <li><strong>Recordatorio de 24 horas y Diario de Alimentos:</strong> Permite evaluar la distribución y consistencia de los carbohidratos en el día.</li>
+                <li><strong>Frecuencia de Alimentos:</strong> Evaluar consumo de grasas saturadas, fibra soluble e insoluble, y azúcares simples.</li>
+                <li><strong>Método de Equivalentes:</strong> Base para estimar porciones y estructurar intervenciones personalizadas.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Notebook and pen -->
+                <rect x="50" y="30" width="140" height="140" rx="8" fill="white" stroke="var(--border-color)" stroke-width="2" />
+                <line x1="80" y1="60" x2="160" y2="60" stroke="#cbd5e1" stroke-width="2" />
+                <line x1="80" y1="80" x2="160" y2="80" stroke="#cbd5e1" stroke-width="2" />
+                <line x1="80" y1="100" x2="160" y2="100" stroke="#cbd5e1" stroke-width="2" />
+                <line x1="80" y1="120" x2="160" y2="120" stroke="#cbd5e1" stroke-width="2" />
+                <!-- Red spiral binding -->
+                <circle cx="50" cy="50" r="4" fill="var(--danger)" />
+                <circle cx="50" cy="70" r="4" fill="var(--danger)" />
+                <circle cx="50" cy="90" r="4" fill="var(--danger)" />
+                <circle cx="50" cy="110" r="4" fill="var(--danger)" />
+                <circle cx="50" cy="130" r="4" fill="var(--danger)" />
+                <!-- Pen -->
+                <path d="M220 50 L250 80 L230 100 L200 70 Z" fill="var(--primary)" />
+                <path d="M200 70 L190 75 L200 70" stroke="var(--text-main)" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 15: ACTIVIDAD INTERACTIVA ASSESSMENT -->
+        <div class="slide" id="slide-15">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 3: Evaluación Nutricia</span>
+            <h1 class="slide-title">Actividad: Clasifica y Encuentra Datos Faltantes</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Caso Clínico de Selección</h3>
+              <p>Colegas, en un paciente varón de 52 años con sospecha de nefropatía diabética, ordene los datos recopilados en su respectiva categoría y detecte qué información bioquímica falta para estructurar el diagnóstico.</p>
+              <div class="sorter-container">
+                <div class="sorter-pool" id="sorter-pool-items">
+                  <div class="sorter-item" data-domain="AD" id="sort-1">Circunferencia cintura: 104 cm</div>
+                  <div class="sorter-item" data-domain="BD" id="sort-2">HbA1c: 9.2%</div>
+                  <div class="sorter-item" data-domain="FH" id="sort-3">Refresco: 3 latas/día</div>
+                  <div class="sorter-item" data-domain="BD" id="sort-4">Glucosa ayuno: 189 mg/dL</div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; justify-content:flex-start; align-items:stretch; padding:10px;">
+              <div class="sorter-bins">
+                <div class="sorter-bin" id="bin-ad" data-domain="AD">
+                  <div class="sorter-bin-title">Antropométrico (AD)</div>
+                </div>
+                <div class="sorter-bin" id="bin-bd" data-domain="BD">
+                  <div class="sorter-bin-title">Bioquímico (BD)</div>
+                </div>
+              </div>
+              <button class="btn btn-secondary" id="btn-validate-sorter" style="margin-top:10px; align-self:center;">Verificar Clasificación</button>
+              <div id="sorter-feedback" style="font-size:0.8rem; text-align:center; margin-top:5px; font-weight:bold;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 4: DIAGNÓSTICO NUTRICIO -->
+        
+        <!-- DIAPOSITIVA 16: DIAGNÓSTICO MÉDICO VS NUTRICIO -->
+        <div class="slide" id="slide-16">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 4: Diagnóstico Nutricio</span>
+            <h1 class="slide-title">Diagnóstico Médico vs. Diagnóstico Nutricio</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>La Frontera Profesional</h3>
+              <p>Es común cometer el error de escribir el diagnóstico médico en la sección nutricia de nuestro expediente.</p>
+              <ul>
+                <li><strong>Diagnóstico Médico:</strong> Describe la patología o disfunción orgánica. No cambia mientras la enfermedad persista (ej. Diabetes Mellitus Tipo 2).</li>
+                <li><strong>Diagnóstico Nutricio:</strong> Describe un problema alimentario o nutricional que el nutriólogo puede tratar de manera independiente. Cambia a medida que el paciente responde a la intervención (ej. Ingesta excesiva de carbohidratos).</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="90%" height="90%">
+                <rect x="10" y="30" width="130" height="140" rx="10" fill="rgba(239, 68, 68, 0.05)" stroke="var(--danger)" stroke-width="2" />
+                <rect x="160" y="30" width="130" height="140" rx="10" fill="rgba(16, 185, 129, 0.05)" stroke="var(--secondary)" stroke-width="2" />
+                
+                <text x="75" y="55" fill="var(--danger)" font-size="11" font-weight="bold" text-anchor="middle">MÉDICO</text>
+                <text x="225" y="55" fill="var(--secondary)" font-size="11" font-weight="bold" text-anchor="middle">NUTRICIO</text>
+                
+                <text x="75" y="100" fill="var(--text-main)" font-size="9" text-anchor="middle">"Diabetes Tipo 2"</text>
+                <text x="225" y="100" fill="var(--text-main)" font-size="9" text-anchor="middle">"Ingesta excesiva"</text>
+                <text x="225" y="115" fill="var(--text-main)" font-size="9" text-anchor="middle">"de carbohidratos"</text>
+                
+                <text x="75" y="145" fill="var(--text-muted)" font-size="8" text-anchor="middle">Tratamiento farmacológico</text>
+                <text x="225" y="145" fill="var(--text-muted)" font-size="8" text-anchor="middle">Educación y Plan dietético</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 17: ESTRUCTURA PES -->
+        <div class="slide" id="slide-17">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 4: Diagnóstico Nutricio</span>
+            <h1 class="slide-title">Estructura del Diagnóstico PES (P + E + S)</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>La Ecuación Diagnóstica</h3>
+              <p>El enunciado diagnóstico se formula uniendo tres componentes específicos:</p>
+              <ul>
+                <li><strong>Problema (P):</strong> Qué está alterado (usando la taxonomía del eNCPT).</li>
+                <li><strong>Etiología (E):</strong> Cuál es la causa raíz o factor contribuyente. Se une al problema mediante la frase **"relacionado con"**.</li>
+                <li><strong>Signos y Síntomas (S):</strong> Pruebas medibles que evidencian la gravedad. Se une a la etiología mediante la frase **"evidenciado por"**.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- P E S connectors representation -->
+                <rect x="20" y="30" width="260" height="35" rx="6" fill="var(--primary)" opacity="0.15" />
+                <text x="30" y="52" fill="var(--primary)" font-size="11" font-weight="bold">PROBLEMA (P)</text>
+                <text x="270" y="52" fill="var(--text-muted)" font-size="9" text-anchor="end">eNCPT Code</text>
+                
+                <rect x="20" y="85" width="260" height="35" rx="6" fill="var(--accent)" opacity="0.15" />
+                <text x="30" y="107" fill="var(--accent)" font-size="11" font-weight="bold">ETIOLOGÍA (E)</text>
+                <text x="270" y="107" fill="var(--text-muted)" font-size="9" text-anchor="end">Causa Raíz</text>
+                
+                <rect x="20" y="140" width="260" height="35" rx="6" fill="var(--secondary)" opacity="0.15" />
+                <text x="30" y="162" fill="var(--secondary)" font-size="11" font-weight="bold">SIGNOS Y SÍNTOMAS (S)</text>
+                <text x="270" y="162" fill="var(--text-muted)" font-size="9" text-anchor="end">Métricas y datos</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 18: EJEMPLOS DE DIAGNÓSTICOS PES EN DIABETES -->
+        <div class="slide" id="slide-18">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 4: Diagnóstico Nutricio</span>
+            <h1 class="slide-title">Ejemplos de Diagnósticos PES en Diabetes</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text" style="max-width:35%;">
+              <h3>Casos Clínicos Frecuentes</h3>
+              <p>Revisemos 8 ejemplos específicos de diagnósticos basados en la taxonomía eNCPT y adaptados a pacientes metabólicos y diabéticos.</p>
+              <p style="font-size:0.85rem; color:var(--text-muted)">💡 <em>Preste atención al uso de indicadores como la HbA1c o el consumo de equivalentes extras de carbohidratos en la sección de signos.</em></p>
+            </div>
+            <div class="slide-visual" style="max-width:65%; flex-direction:column; justify-content:flex-start; align-items:stretch; padding:10px; overflow-y:auto;">
+              <div style="font-size:0.75rem; display:flex; flex-direction:column; gap:6px;">
+                <div style="background:var(--card-bg); padding:6px; border-radius:4px; border-left:3px solid var(--primary)">
+                  <strong>1. Ingesta excesiva de carbohidratos (NI-5.8.2)</strong> relacionado con consumo habitual de refrescos azucarados evidenciado por glucosa de 180 mg/dL.
+                </div>
+                <div style="background:var(--card-bg); padding:6px; border-radius:4px; border-left:3px solid var(--primary)">
+                  <strong>2. Conocimientos deficientes sobre alimentación (NB-1.1)</strong> relacionado con falta de educación en conteo de CHO evidenciado por errores recurrentes en dosis.
+                </div>
+                <div style="background:var(--card-bg); padding:6px; border-radius:4px; border-left:3px solid var(--primary)">
+                  <strong>3. Alteración de los valores bioquímicos (NC-2.2)</strong> relacionado con desapego dietético evidenciado por HbA1c de 9.5%.
+                </div>
+                <div style="background:var(--card-bg); padding:6px; border-radius:4px; border-left:3px solid var(--primary)">
+                  <strong>4. Elección inadecuada de alimentos (NB-1.7)</strong> relacionado con mitos alimentarios en diabetes evidenciado por eliminación de frutas y verduras.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 19: ACTIVIDAD INTERACTIVA PES PUZZLE -->
+        <div class="slide" id="slide-19">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 4: Diagnóstico Nutricio</span>
+            <h1 class="slide-title">Actividad: Construcción de Diagnóstico PES en Diabetes</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Construye el Enunciado</h3>
+              <p>Ordene las piezas de la derecha en las casillas correspondientes para formular un diagnóstico PES impecable y coherente para un paciente con DM2 descontrolada.</p>
+              <div style="background-color:rgba(2,132,199,0.05); padding:10px; border-radius:var(--radius-sm); border-left:4px solid var(--primary); font-size:0.85rem; margin-bottom:5px;">
+                <strong>Caso:</strong> Paciente consume habitualmente jugos industrializados, presenta HbA1c de 8.5% e ingesta de 10 equivalentes de azúcar al día.
+              </div>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; justify-content:flex-start; align-items:stretch; padding:10px;">
+              <div class="puzzle-container" id="diabetes-pes-puzzle">
+                <div class="puzzle-slots">
+                  <div class="puzzle-slot" id="db-slot-p" data-type="P" data-label="Problema (P)">
+                    <div style="font-size:0.7rem; color:var(--text-muted)">Coloca el Problema</div>
+                  </div>
+                  <div class="puzzle-connector">relacionado con</div>
+                  <div class="puzzle-slot" id="db-slot-e" data-type="E" data-label="Etiología (E)">
+                    <div style="font-size:0.7rem; color:var(--text-muted)">Coloca la Etiología</div>
+                  </div>
+                  <div class="puzzle-connector">evidenciado por</div>
+                  <div class="puzzle-slot" id="db-slot-s" data-type="S" data-label="Signos/Síntomas (S)">
+                    <div style="font-size:0.7rem; color:var(--text-muted)">Coloca los Signos</div>
+                  </div>
+                </div>
+                <div class="puzzle-pieces" id="db-puzzle-pieces-pool">
+                  <div class="puzzle-piece" data-type="S" data-id="dbs1">HbA1c de 8.5% y registro alimentario de 10 equiv. de azúcar al día</div>
+                  <div class="puzzle-piece" data-type="P" data-id="dbp1">Ingesta excesiva de carbohidratos (NI-5.8.2)</div>
+                  <div class="puzzle-piece" data-type="E" data-id="dbe1">Consumo habitual de bebidas azucaradas industrializadas</div>
+                </div>
+                <button class="btn btn-primary" id="btn-validate-db-puzzle" style="margin-top:10px; align-self:center;">Validar Estructura PES</button>
+                <div id="db-puzzle-feedback" class="puzzle-feedback"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 5: INTERVENCIÓN NUTRICIA -->
+        
+        <!-- DIAPOSITIVA 20: OBJETIVOS SMART -->
+        <div class="slide" id="slide-20">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Objetivos SMART en la Intervención de Diabetes</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Diseño de Metas Clínicas</h3>
+              <p>Las metas deben estructurarse con metodología **SMART** para asegurar que el paciente comprenda y se comprometa:</p>
+              <ul>
+                <li><strong>Específico (Specific):</strong> Reducir equivalentes de cereales simples.</li>
+                <li><strong>Medible (Measurable):</strong> Pasar de 6 a 2 equivalentes diarios.</li>
+                <li><strong>Alcanzable (Achievable):</strong> Pactado de mutuo acuerdo con el paciente.</li>
+                <li><strong>Realista (Realistic):</strong> Adecuado a su presupuesto e historial dietético.</li>
+                <li><strong>Tiempo (Time-bound):</strong> Evaluado en un plazo de 4 semanas.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Dartboard illustration -->
+                <circle cx="150" cy="100" r="70" fill="none" stroke="var(--primary)" stroke-width="8" />
+                <circle cx="150" cy="100" r="50" fill="none" stroke="var(--secondary)" stroke-width="8" />
+                <circle cx="150" cy="100" r="30" fill="none" stroke="var(--accent)" stroke-width="8" />
+                <circle cx="150" cy="100" r="10" fill="var(--danger)" />
+                <!-- Arrow hitting center -->
+                <path d="M70 180 L140 110" stroke="var(--text-main)" stroke-width="3" stroke-linecap="round" />
+                <path d="M140 110 L130 110 M140 110 L140 120" stroke="var(--text-main)" stroke-width="3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 21: PLAN DE ALIMENTACIÓN INDIVIDUALIZADO -->
+        <div class="slide" id="slide-21">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Plan de Alimentación Individualizado</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>El Mito de la "Dieta para Diabéticos"</h3>
+              <p>La ADA 2025 y ALAD establecen que **no existe una distribución única de macronutrientes** aplicable a todos. El plan debe ser individualizado.</p>
+              <ul>
+                <li><strong>Distribución base recomendada:</strong> 45-55% Carbohidratos complejos ricos en fibra, 15-20% Proteínas, y 25-35% Grasas saludables (priorizando monoinsaturadas).</li>
+                <li><strong>Fibra dietética:</strong> Meta de &ge;14 g de fibra por cada 1000 kcal de ingesta (o &ge;25-35g/día) para modular picos de glucemia.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <!-- Plate distribution SVG -->
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <circle cx="150" cy="100" r="70" fill="white" stroke="var(--border-color)" stroke-width="4" />
+                <!-- Half plate: vegetables -->
+                <path d="M150 100 L150 30 A70 70 0 0 1 150 170 Z" fill="var(--secondary)" opacity="0.6" />
+                <!-- Quarter: protein -->
+                <path d="M150 100 L150 170 A70 70 0 0 1 80 100 Z" fill="#ef4444" opacity="0.6" />
+                <!-- Quarter: carbs -->
+                <path d="M150 100 L80 100 A70 70 0 0 1 150 30 Z" fill="var(--accent)" opacity="0.6" />
+                
+                <text x="195" y="105" fill="var(--text-main)" font-size="9" font-weight="bold" text-anchor="middle">50% Vegetales</text>
+                <text x="110" y="140" fill="var(--text-main)" font-size="9" font-weight="bold" text-anchor="middle">25% Proteína</text>
+                <text x="110" y="70" fill="var(--text-main)" font-size="9" font-weight="bold" text-anchor="middle">25% Carbohidratos</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 22: PATRONES ALIMENTARIOS RECOMENDADOS -->
+        <div class="slide" id="slide-22">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Patrones Alimentarios Recomendados</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text" style="max-width:40%;">
+              <h3>Evidencia Científica de Patrones</h3>
+              <p>La ADA 2025 resalta tres patrones dietéticos con mayor solidez científica para el control glucémico y la salud cardiovascular:</p>
+              <ul>
+                <li><strong>Dieta Mediterránea:</strong> Rica en grasas saludables (aceite de oliva) y antioxidantes.</li>
+                <li><strong>Dieta DASH:</strong> Enfoque en control de sodio e hipertensión.</li>
+                <li><strong>Alimentación Basada en Plantas:</strong> Alta densidad en fibra y fitonutrientes.</li>
+              </ul>
+            </div>
+            <div class="slide-visual" style="max-width:60%; display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:10px;">
+              <div style="background:white; border:1px solid var(--border-color); padding:10px; border-radius:8px;">
+                <h4 style="font-size:0.85rem; font-family:var(--font-title); color:var(--primary)">Dieta Mediterránea</h4>
+                <p style="font-size:0.7rem; color:var(--text-muted); margin-top:4px;">Mejora el perfil lipídico y reduce riesgo cardiovascular en DM2 de forma contundente.</p>
+              </div>
+              <div style="background:white; border:1px solid var(--border-color); padding:10px; border-radius:8px;">
+                <h4 style="font-size:0.85rem; font-family:var(--font-title); color:var(--primary)">Dieta DASH</h4>
+                <p style="font-size:0.7rem; color:var(--text-muted); margin-top:4px;">Disminuye la presión arterial y optimiza el control glucémico posprandial.</p>
+              </div>
+              <div style="background:white; border:1px solid var(--border-color); padding:10px; border-radius:8px;">
+                <h4 style="font-size:0.85rem; font-family:var(--font-title); color:var(--primary)">Basada en Plantas</h4>
+                <p style="font-size:0.7rem; color:var(--text-muted); margin-top:4px;">Aumenta de forma notable la sensibilidad periférica a la insulina.</p>
+              </div>
+              <div style="background:white; border:1px solid var(--border-color); padding:10px; border-radius:8px;">
+                <h4 style="font-size:0.85rem; font-family:var(--font-title); color:var(--primary)">Bajo Índice Glucémico</h4>
+                <p style="font-size:0.7rem; color:var(--text-muted); margin-top:4px;">Reduce las oscilaciones glucémicas bruscas después de comer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 23: CONTEO DE CARBOHIDRATOS -->
+        <div class="slide" id="slide-23">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Conteo de Carbohidratos: Paso a Paso</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>La Clave de la Dosificación Prandial</h3>
+              <p>Es el método de elección para optimizar el control de la glucosa posprandial. Consta de pasos progresivos:</p>
+              <ol>
+                <li><strong>Identificar alimentos con CHO:</strong> Cereales, frutas, leguminosas, lácteos y azúcares.</li>
+                <li><strong>Medir porciones:</strong> Utilizar tazas, cucharas, báscula de alimentos.</li>
+                <li><strong>Estimar gramos de CHO:</strong> Usar tablas de equivalentes o etiquetas nutrimentales (1 equivalente de CHO = 15 gramos de CHO).</li>
+              </ol>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Carbohydrate steps -->
+                <rect x="30" y="30" width="240" height="35" rx="8" fill="var(--primary)" opacity="0.1" />
+                <text x="45" y="52" fill="var(--primary)" font-size="10" font-weight="bold">1. Identificar grupos de alimentos</text>
+                
+                <rect x="30" y="80" width="240" height="35" rx="8" fill="var(--primary)" opacity="0.2" />
+                <text x="45" y="102" fill="var(--primary)" font-size="10" font-weight="bold">2. Estimar la porción exacta (medición)</text>
+                
+                <rect x="30" y="130" width="240" height="35" rx="8" fill="var(--primary)" opacity="0.3" />
+                <text x="45" y="152" fill="var(--primary)" font-size="10" font-weight="bold">3. Calcular gramos de CHO totales (1 Eq = 15g)</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 24: CONTEO DE CARBOHIDRATOS EN DM1 -->
+        <div class="slide" id="slide-24">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Conteo de Carbohidratos Avanzado en DM1</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Dosificación de Insulina de Ultra-Precisión</h3>
+              <p>En DM1, el paciente ajusta su dosis de insulina rápida prandial en función de lo que consumirá:</p>
+              <ul>
+                <li><strong>Relación Insulina-Carbohidrato (I:CHO):</strong> Indica cuántos gramos de CHO cubre 1 unidad de insulina (ej. I:CHO = 1:15g).</li>
+                <li><strong>Factor de Sensibilidad a la Insulina (FSI):</strong> Cuánto reduce la glucosa capilar 1 unidad de insulina (ej. FSI = 50 mg/dL).</li>
+                <li><strong>Unidad Grasa-Proteína (UGP):</strong> Ajuste del bolo tardío para comidas con alta densidad lipídica y proteica para evitar hiperglucemia posprandial tardía.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <rect x="20" y="30" width="260" height="140" rx="12" fill="var(--card-bg)" stroke="var(--border-color)" stroke-width="2" />
+                <text x="35" y="60" fill="var(--text-main)" font-size="11" font-weight="bold">Bolo Prandial = Gramos CHO / Coeficiente I:CHO</text>
+                <text x="35" y="100" fill="var(--text-main)" font-size="11" font-weight="bold">Bolo Corrección = (Glucosa Actual - Glucosa Meta) / FSI</text>
+                <text x="35" y="140" fill="var(--primary)" font-size="10" font-weight="bold">UGP: 100 kcal de grasa/prot = 1 UGP (&asymp; 1 bolo de 15g CHO)</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 25: CONTEO DE CARBOHIDRATOS EN DM2 -->
+        <div class="slide" id="slide-25">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Conteo de Carbohidratos en DM2</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Control de Porciones y Carga Glucémica</h3>
+              <p>En la DM2, la prioridad no suele ser ajustar dosis de insulina dinámicas, sino mantener la estabilidad de la ingesta de CHO para no saturar al páncreas:</p>
+              <ul>
+                <li><strong>Distribución Consistente:</strong> Evitar omitir comidas y mantener porciones constantes (ej. 3-4 equivalentes por comida).</li>
+                <li><strong>Carga Glucémica:</strong> Combinar carbohidratos complejos con proteína y grasas saludables para aplanar la curva glucémica posprandial.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Glycemic index curve comparison -->
+                <path d="M20 160 Q 60 40, 110 160" fill="none" stroke="var(--danger)" stroke-width="3" />
+                <path d="M20 160 Q 80 110, 160 160" fill="none" stroke="var(--secondary)" stroke-width="3" />
+                <line x1="20" y1="160" x2="280" y2="160" stroke="var(--text-main)" stroke-width="2" />
+                
+                <text x="110" y="55" fill="var(--danger)" font-size="9" font-weight="bold">CHO simples solos (pico alto)</text>
+                <text x="180" y="125" fill="var(--secondary)" font-size="9" font-weight="bold">CHO + fibra + proteína</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 26: ACTIVIDAD INTERACTIVA CALCULAR CARBOHIDRATOS Y UGP -->
+        <div class="slide" id="slide-26">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Actividad: Conteo Avanzado, Dosis de Insulina y UGP</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text" style="max-width:40%;">
+              <h3>Diseñe su Platillo</h3>
+              <p>Haga clic en los alimentos para agregarlos al plato. Observe cómo se recalculan los gramos de CHO y el bolo de insulina rápida necesario.</p>
+              <div style="font-size:0.75rem; margin-bottom:5px;">
+                <strong>Parámetros del paciente:</strong> I:CHO = 1:10g | FSI = 40 mg/dL | Glucosa meta = 100 mg/dL.
+              </div>
+              <div class="slider-group-inline">
+                <label>I:CHO (g):</label>
+                <input type="range" id="input-calc-icho" min="5" max="25" value="10">
+                <span id="val-calc-icho">10</span>
+              </div>
+              <div class="slider-group-inline">
+                <label>Glucosa Actual:</label>
+                <input type="range" id="input-calc-glucosa" min="80" max="250" value="180">
+                <span id="val-calc-glucosa">180</span>
+              </div>
+            </div>
+            <div class="slide-visual" style="max-width:60%;">
+              <div class="plate-widget">
+                <div class="plate-interactive-area">
+                  <div class="plate-canvas-circle" id="interactive-plate-area">
+                    <!-- Food items loaded by JS -->
+                  </div>
+                  <div class="plate-food-selector">
+                    <button class="food-select-btn" data-id="manzana"><span>🍎 Manzana</span><span style="font-size:0.65rem;">15g CHO | 0g Fat</span></button>
+                    <button class="food-select-btn" data-id="pan"><span>🍞 Pan (2)</span><span style="font-size:0.65rem;">30g CHO | 2g Prot</span></button>
+                    <button class="food-select-btn" data-id="tocino"><span>🥓 Tocino (2)</span><span style="font-size:0.65rem;">0g CHO | 16g Fat</span></button>
+                  </div>
+                </div>
+                
+                <div class="plate-calculation-results">
+                  <div class="calc-row calc-total"><span>Total CHO:</span><span id="total-cho-val">0 g</span></div>
+                  <div class="calc-row"><span>Bolo por Carbohidratos:</span><span id="bolo-cho-val">0.0 U</span></div>
+                  <div class="calc-row"><span>Bolo por Corrección:</span><span id="bolo-corr-val">0.0 U</span></div>
+                  <div class="calc-row" style="color:var(--accent);"><span>UGP detectadas:</span><span id="total-ugp-val">0.0 UGP</span></div>
+                  <div class="calc-row" style="border-top: 1px solid var(--border-color); font-weight:bold;"><span>Bolo Total Sugerido:</span><span id="total-bolo-val">0.0 U</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 27: HIPOGLUCEMIA REGLA DEL 15 -->
+        <div class="slide" id="slide-27">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Tratamiento de Hipoglucemia: Regla del 15</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Manejo de Emergencias Clínicas</h3>
+              <p>La hipoglucemia (&lt;70 mg/dL) es la complicación aguda más temida en pacientes que utilizan insulina o sulfonilureas. Se debe tratar de forma inmediata usando la **Regla del 15**:</p>
+              <p style="font-size:0.85rem; color:var(--text-muted)">💡 <em>Haga clic en los pasos del interactivo para iniciar la simulación de tiempo de rescate.</em></p>
+            </div>
+            <div class="slide-visual">
+              <div class="rule15-container">
+                <div class="rule15-step-card active" id="r15-step1">
+                  <div class="rule15-step-num">1</div>
+                  <div>
+                    <strong>Paso 1: Consumir 15g de CHO simples</strong>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">Ej. 1/2 taza de jugo de naranja o 3 tabletas de glucosa comercial.</div>
+                  </div>
+                </div>
+                <div class="rule15-step-card" id="r15-step2">
+                  <div class="rule15-step-num">2</div>
+                  <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+                    <div>
+                      <strong>Paso 2: Esperar 15 minutos</strong>
+                      <div style="font-size:0.75rem; color:var(--text-muted);">Reposo absoluto para absorción de glucosa.</div>
+                    </div>
+                    <button class="rule15-timer-btn" id="btn-start-r15-timer">Esperar (Simular)</button>
+                  </div>
+                </div>
+                <div class="rule15-step-card" id="r15-step3">
+                  <div class="rule15-step-num">3</div>
+                  <div>
+                    <strong>Paso 3: Reevaluar glucemia</strong>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">Si sigue &lt;70 mg/dL, repita el Paso 1. Si normaliza, consuma un snack mixto.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 28: HIPERGLUCEMIA MANEJO NUTRICIONAL -->
+        <div class="slide" id="slide-28">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Hiperglucemia: Manejo Clínico-Nutricional</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Evitar la Descompensación Aguda</h3>
+              <p>Ante niveles sostenidos de glucosa &gt;250 mg/dL, el nutriólogo clínico debe estar alerta a signos de cetoacidosis diabética (CAD) o estado hiperosmolar hiperglucémico (EHH):</p>
+              <ul>
+                <li><strong>Hidratación Oral Agresiva:</strong> 250-500 mL/hora de agua libre para favorecer la excreción renal de glucosa.</li>
+                <li><strong>Medición de Cetonas:</strong> En orina o sangre (DM1). Cetonas elevadas implican derivación urgente a urgencias.</li>
+                <li><strong>Ajuste del Bolo:</strong> Corrección con insulina rápida guiada por FSI (no ingerir carbohidratos en este lapso).</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Water glass and ketone strip -->
+                <rect x="80" y="50" width="60" height="100" rx="8" fill="none" stroke="var(--primary)" stroke-width="4" />
+                <path d="M80 100 H140 V140 H80 Z" fill="var(--primary)" opacity="0.3" />
+                <text x="110" y="120" fill="var(--primary)" font-size="10" font-weight="bold" text-anchor="middle">Agua Libre</text>
+                
+                <rect x="180" y="40" width="30" height="120" rx="4" fill="#cbd5e1" />
+                <rect x="180" y="130" width="30" height="30" fill="var(--danger)" />
+                <text x="195" y="120" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle" transform="rotate(-90 195 120)">CETONAS</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 29: TECNOLOGÍA EN DIABETES (MCG) -->
+        <div class="slide" id="slide-29">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 5: Intervención Nutricia</span>
+            <h1 class="slide-title">Tecnología Aplicada a Diabetes (MCG y Bombas)</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>El Futuro de la Consulta Nutricional</h3>
+              <p>El Monitoreo Continuo de Glucosa (MCG) aporta lecturas cada 1-5 minutos sin pinchazos. Ofrece métricas claves para el nutriólogo:</p>
+              <ul>
+                <li><strong>Tiempo en Rango (TIR):</strong> Porcentaje de tiempo entre 70 y 180 mg/dL (Meta: &gt;70% del día).</li>
+                <li><strong>Variabilidad Glucémica (CV):</strong> Coeficiente de variación (Meta: &le;36%).</li>
+              </ul>
+              <p style="font-size:0.8rem; color:var(--text-muted)">💡 <em>Interactúe inyectando insulina o comiendo carbohidratos en el simulador para ver la curva dinámica.</em></p>
+            </div>
+            <div class="slide-visual">
+              <div class="cgm-simulator">
+                <div class="cgm-header-row">
+                  <span style="font-size:0.8rem; font-weight:bold; color:var(--text-muted)">Simulador MCG</span>
+                  <div class="cgm-value-display" id="cgm-numeric-val">140 <span style="font-size:0.75rem; color:var(--text-muted)">mg/dL</span> <span class="cgm-trend-arrow flat" id="cgm-trend-arrow">&rarr;</span></div>
+                </div>
+                <div class="cgm-graph-area">
+                  <div class="cgm-target-band"></div>
+                  <!-- SVG for the trend line -->
+                  <svg class="cgm-graph-svg" id="cgm-line-svg" viewBox="0 0 250 120">
+                    <path d="M 0 60 L 50 60 L 100 65 L 150 60 L 200 60 L 250 60" fill="none" stroke="var(--primary)" stroke-width="3" id="cgm-trend-path"/>
+                  </svg>
+                </div>
+                <div class="cgm-actions">
+                  <button class="btn btn-secondary" id="btn-cgm-eat" style="font-size:0.75rem; padding:4px 8px;">🍽️ Comer Carbohidratos (+50)</button>
+                  <button class="btn btn-primary" id="btn-cgm-inject" style="font-size:0.75rem; padding:4px 8px;">💉 Bolo Insulina (-60)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 6: MONITOREO Y EVALUACIÓN -->
+        
+        <!-- DIAPOSITIVA 30: INDICADORES DE SEGUIMIENTO -->
+        <div class="slide" id="slide-30">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 6: Monitoreo y Evaluación</span>
+            <h1 class="slide-title">Indicadores de Seguimiento Clínico y Conductual</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Vincular Resultados a Diagnósticos</h3>
+              <p>El Monitoreo (M&E) verifica la efectividad de las intervenciones:</p>
+              <ul>
+                <li><strong>Indicadores Clínicos/Bioquímicos:</strong> HbA1c, variabilidad glucémica capilar, perfil de lípidos, presión arterial.</li>
+                <li><strong>Indicadores Dietéticos:</strong> Gramos de CHO consumidos en las porciones pautadas, frecuencia de consumo de grasas trans.</li>
+                <li><strong>Indicadores Conductuales:</strong> Habilidad en conteo de CHO, registro sistemático en bitácora, adherencia al plan.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Interconnected gears -->
+                <circle cx="100" cy="80" r="30" stroke="var(--primary)" stroke-width="3" stroke-dasharray="10 5" fill="none" style="animation: spin 12s linear infinite; transform-origin: 100px 80px;" />
+                <circle cx="160" cy="120" r="25" stroke="var(--secondary)" stroke-width="3" stroke-dasharray="8 4" fill="none" style="animation: spin 8s linear infinite reverse; transform-origin: 160px 120px;" />
+                <text x="100" y="84" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">Clínico</text>
+                <text x="160" y="124" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">Conducta</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 31: METAS CLÍNICAS ADA 2025 -->
+        <div class="slide" id="slide-31">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 6: Monitoreo y Evaluación</span>
+            <h1 class="slide-title">Metas Clínicas Estandarizadas (ADA 2025)</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text" style="max-width:40%;">
+              <h3>El Criterio ADA 2025</h3>
+              <p>Las metas clínicas en adultos no gestantes con diabetes deben seguir los lineamientos internacionales oficiales.</p>
+              <div style="background-color:rgba(16,185,129,0.05); padding:10px; border-radius:var(--radius-sm); border-left:4px solid var(--secondary); font-size:0.85rem;">
+                <strong>Meta Individualizada:</strong> En adultos mayores con historial de hipoglucemias severas, el objetivo de HbA1c puede flexibilizarse a &lt;8.0% o &lt;8.5%.
+              </div>
+            </div>
+            <div class="slide-visual" style="max-width:60%;">
+              <div class="comparison-table-container">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Indicador Clínico</th>
+                      <th>Meta ADA 2025</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>HbA1c (%)</strong></td>
+                      <td>&lt; 7.0% (individualizado)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Glucemia en Ayuno</strong></td>
+                      <td>80 - 130 mg/dL</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Glucemia Posprandial (1-2h)</strong></td>
+                      <td>&lt; 180 mg/dL</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Tiempo en Rango (TIR)</strong></td>
+                      <td>&gt; 70% (70-180 mg/dL)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Presión Arterial</strong></td>
+                      <td>&lt; 130/80 mmHg</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 32: ALGORITMO DE AJUSTE -->
+        <div class="slide" id="slide-32">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 6: Monitoreo y Evaluación</span>
+            <h1 class="slide-title">¿Cuándo Modificar el Plan Nutricional?</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Algoritmo de Decisiones Clínicas</h3>
+              <p>El plan de alimentación no es estático. Debe revisarse de forma sistemática ante las siguientes alertas:</p>
+              <ul>
+                <li><strong>Presencia de Hipoglucemias:</strong> Requiere reevaluar la distribución de CHO, el coeficiente I:CHO o reducir dosis de fármacos.</li>
+                <li><strong>Cambios en Medicación:</strong> Si se agrega insulina basal o bolo prandial, el plan de alimentación debe adaptarse.</li>
+                <li><strong>Estancamiento de Peso u Objetivos Metabólicos:</strong> Indica falta de adherencia o error en estimaciones iniciales.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="90%" height="90%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Simple Decision flow -->
+                <rect x="90" y="20" width="120" height="30" rx="4" fill="var(--primary)" opacity="0.2" stroke="var(--primary)" stroke-width="1.5" />
+                <text x="150" y="38" fill="var(--text-main)" font-size="9" font-weight="bold" text-anchor="middle">¿Paciente cumple meta?</text>
+                
+                <path d="M150 50 V70" stroke="var(--text-muted)" stroke-width="1.5" />
+                
+                <rect x="20" y="70" width="100" height="30" rx="4" fill="var(--secondary)" opacity="0.2" stroke="var(--secondary)" stroke-width="1.5" />
+                <text x="70" y="88" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">SÍ &rarr; Reforzar y citar</text>
+                
+                <rect x="180" y="70" width="100" height="30" rx="4" fill="var(--danger)" opacity="0.2" stroke="var(--danger)" stroke-width="1.5" />
+                <text x="230" y="88" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">NO &rarr; Buscar causa raíz</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 7: CASOS CLÍNICOS INTEGRADORES -->
+        
+        <!-- DIAPOSITIVA 33: CASO CLINICO 1 (DM1) -->
+        <div class="slide" id="slide-33">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 7: Casos Clínicos</span>
+            <h1 class="slide-title">Caso Clínico 1: Diabetes Tipo 1 Reciente</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Paciente DM1 en Consulta</h3>
+              <p>Femenina de 19 años. Diagnosticada con Diabetes Mellitus Tipo 1 hace 3 meses.</p>
+              <table class="case-data-table">
+                <thead>
+                  <tr>
+                    <th>Dato</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Antropometría</strong></td>
+                    <td>Peso: 54 kg, Estatura: 1.63 m, IMC: 20.3 (Normopeso).</td>
+                    <td>Estable</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bioquímica</strong></td>
+                    <td>HbA1c: 8.9%, Glucosa ayuno: 198 mg/dL.</td>
+                    <td><span class="tag-badge tag-badge-danger">Elevado</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tratamiento</strong></td>
+                    <td>Esquema Basal-Bolo (Glargina 16 UI + Lispro prandial).</td>
+                    <td>Esquema activo</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="font-size:0.8rem; color:var(--text-muted)">Reporta miedo a comer carbohidratos, realizando restricciones severas y presentando picos de hipoglucemia nocturna seguidos de efecto Somogyi.</p>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; justify-content:center;">
+              <div class="quiz-widget" style="width:90%;" id="case1-quiz">
+                <div class="quiz-question">¿Cuál es el diagnóstico prioritario en este caso clínico?</div>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-id="a">A) Ingesta deficiente de carbohidratos relacionado con miedo a la hiperglucemia evidenciado por hipoglucemias recurrentes.</button>
+                  <button class="quiz-option" data-id="b">B) Alteración de los valores bioquímicos relacionado con descontrol en insulina evidenciado por HbA1c de 8.9%.</button>
+                </div>
+                <div class="quiz-feedback" id="case1-feedback"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 34: DISCUSIÓN CASO 1 -->
+        <div class="slide" id="slide-34">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 7: Casos Clínicos</span>
+            <h1 class="slide-title">Discusión Caso 1: Cálculo de Insulina Prandial</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Intervención y Conteo Avanzado</h3>
+              <p>Para resolver la restricción dietética y la variabilidad glucémica de la paciente, decidimos implementar un conteo de carbohidratos avanzado:</p>
+              <ul>
+                <li><strong>Establecer I:CHO:</strong> Iniciamos con una relación estándar de 1 unidad por cada 15 g de carbohidratos (1:15).</li>
+                <li><strong>Educación Nutricional:</strong> Enseñar a pesar alimentos y leer etiquetas nutrimentales.</li>
+                <li><strong>Bolo de Insulina:</strong> Si la paciente va a desayunar 45 g de CHO complejos, su dosis de Lispro será de **3 unidades prandiales**.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <circle cx="150" cy="100" r="60" fill="none" stroke="var(--primary)" stroke-width="4" />
+                <text x="150" y="90" fill="var(--text-main)" font-size="12" font-weight="bold" text-anchor="middle">45g CHO Desayuno</text>
+                <text x="150" y="110" fill="var(--secondary)" font-size="14" font-weight="bold" text-anchor="middle">&divide; 15 (I:CHO)</text>
+                <text x="150" y="135" fill="var(--primary)" font-size="16" font-weight="bold" text-anchor="middle">= 3 UI Insulina Lispro</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 35: CASO CLINICO 2 (DM2 + OBESIDAD) -->
+        <div class="slide" id="slide-35">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 7: Casos Clínicos</span>
+            <h1 class="slide-title">Caso Clínico 2: Diabetes Tipo 2 con Obesidad y Resistencia</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Paciente DM2 en Consulta</h3>
+              <p>Masculino de 54 años. Diagnosticado con DM2 hace 4 años.</p>
+              <table class="case-data-table">
+                <thead>
+                  <tr>
+                    <th>Dato</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Antropometría</strong></td>
+                    <td>Peso: 98 kg, Estatura: 1.70 m, IMC: 33.9 (Obesidad Grado II), Cintura: 112 cm.</td>
+                    <td><span class="tag-badge tag-badge-danger">Riesgo</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bioquímica</strong></td>
+                    <td>HbA1c: 7.8%, TG: 240 mg/dL, Col-HDL: 35 mg/dL.</td>
+                    <td><span class="tag-badge tag-badge-danger">Elevado</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tratamiento</strong></td>
+                    <td>Metformina 850 mg c/12h + Empagliflozina 10 mg c/24h.</td>
+                    <td>Estable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; justify-content:center;">
+              <div class="quiz-widget" style="width:90%;" id="case2-quiz">
+                <div class="quiz-question">¿Cuál es la estrategia prioritaria de intervención en este paciente?</div>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-id="a">A) Déficit calórico moderado (300-500 kcal) + Dieta Mediterránea para revertir resistencia.</button>
+                  <button class="quiz-option" data-id="b">B) Dieta cetogénica estricta para bajar de peso rápidamente y normalizar HbA1c.</button>
+                </div>
+                <div class="quiz-feedback" id="case2-feedback"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 36: RESOLUCIÓN CASO 2 -->
+        <div class="slide" id="slide-36">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 7: Casos Clínicos</span>
+            <h1 class="slide-title">Resolución Caso 2: Plan de Macronutrientes y Fibra</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Estrategia Dietoterapéutica Basada en Evidencia</h3>
+              <p>Para abordar la obesidad y la dislipidemia de este paciente con DM2:</p>
+              <ul>
+                <li><strong>Prescripción Dietética:</strong> Plan hipocalórico moderado (1800 kcal) estructurado bajo patrón de Dieta Mediterránea.</li>
+                <li><strong>Fibra Dietética:</strong> Incrementar a 30 g diarios priorizando vegetales y leguminosas para atenuar picos glucémicos.</li>
+                <li><strong>Grasas de Precisión:</strong> Reemplazar grasas saturadas por grasas monoinsaturadas (aguacate, aceite de oliva) para mejorar triglicéridos e HDL.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Icon of Mediterranean food: Avocado, olive, nuts -->
+                <circle cx="100" cy="100" r="30" fill="var(--secondary)" opacity="0.3" />
+                <text x="100" y="104" fill="var(--secondary)" font-size="12" font-weight="bold" text-anchor="middle">Aguacate</text>
+                
+                <circle cx="200" cy="100" r="30" fill="var(--primary)" opacity="0.3" />
+                <text x="200" y="104" fill="var(--primary)" font-size="12" font-weight="bold" text-anchor="middle">Aceite Oliva</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 37: CASO CLINICO 3 (BASAL BOLO) -->
+        <div class="slide" id="slide-37">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 7: Casos Clínicos</span>
+            <h1 class="slide-title">Caso Clínico 3: Paciente con Insulinoterapia Basal-Bolo</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Paciente con Insulinoterapia Compleja</h3>
+              <p>Femenina de 62 años con DM2 de 18 años de evolución, con falla de la célula beta (insulinorequiriente).</p>
+              <table class="case-data-table">
+                <thead>
+                  <tr>
+                    <th>Dato</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Antropometría</strong></td>
+                    <td>Peso: 72 kg, Estatura: 1.58 m, IMC: 28.8 (Sobrepeso).</td>
+                    <td>Estable</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bioquímica</strong></td>
+                    <td>HbA1c: 8.2%, Glucosa posprandial habitual: 220 mg/dL.</td>
+                    <td><span class="tag-badge tag-badge-danger">Elevado</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tratamiento</strong></td>
+                    <td>Insulina NPH (18 UI mañana / 8 UI noche) + Insulina Rápida Regular (bolo prandial).</td>
+                    <td>Esquema activo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="slide-visual" style="flex-direction:column; justify-content:center;">
+              <div class="quiz-widget" style="width:90%;" id="case3-quiz">
+                <div class="quiz-question">¿Cuál es el factor más crítico que debe evaluar el nutriólogo en este esquema de insulina?</div>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-id="a">A) Asegurar la coincidencia de los picos de acción de la insulina intermedia (NPH) con las comidas.</button>
+                  <button class="quiz-option" data-id="b">B) Restringir totalmente los carbohidratos en la cena para evitar la hiperglucemia matutina.</button>
+                </div>
+                <div class="quiz-feedback" id="case3-feedback"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIAPOSITIVA 38: RESOLUCIÓN CASO 3 -->
+        <div class="slide" id="slide-38">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 7: Casos Clínicos</span>
+            <h1 class="slide-title">Resolución Caso 3: Acoplamiento de Tiempos e Ingesta</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Ajuste Fino de la Nutrición con Insulinas</h3>
+              <p>Para la paciente con insulina NPH e insulina rápida regular:</p>
+              <ul>
+                <li><strong>Consistencia en los Horarios:</strong> La insulina NPH tiene un pico de acción a las 4-8 horas de inyectada. Las comidas principales deben coincidir con estos picos para evitar hipoglucemias.</li>
+                <li><strong>Snacks de Seguridad:</strong> Evaluar la necesidad de una colación nocturna (15 g de CHO complejos + proteína) si presenta hipoglucemia a las 3:00 AM (efectos Somogyi).</li>
+                <li><strong>Educación en Automonitoreo:</strong> Registro de glucemias capilares pre y posprandiales para modular la dosificación nutricional.</li>
+              </ul>
+            </div>
+            <div class="slide-visual">
+              <svg viewBox="0 0 300 200" width="85%" height="85%">
+                <!-- Insuline curve over 24 hours -->
+                <path d="M20 160 Q 80 40, 140 160 T 260 160" fill="none" stroke="var(--primary)" stroke-width="3" />
+                <path d="M20 160 H280" stroke="var(--text-main)" stroke-width="1.5" />
+                
+                <!-- Food icons placed under peaks -->
+                <text x="80" y="180" fill="var(--text-main)" font-size="9" font-weight="bold" text-anchor="middle">Comida (Pico de NPH)</text>
+                <text x="140" y="80" fill="var(--danger)" font-size="9" font-weight="bold" text-anchor="middle">Pico de Acción NPH</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- MÓDULO 8: ERRORES FRECUENTES -->
+        
+        <!-- DIAPOSITIVA 39: LOS 10 ERRORES FRECUENTES -->
+        <div class="slide" id="slide-39">
+          <div class="slide-header">
+            <span class="slide-tag">Módulo 8: Errores Frecuentes</span>
+            <h1 class="slide-title">Los 10 Errores más Comunes en la Atención Nutricional</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text" style="max-width:30%;">
+              <h3>Rigor Clínico en Consulta</h3>
+              <p>Colegas, identifiquen y eviten estas prácticas obsoletas en su consulta.</p>
+              <p style="font-size:0.8rem; color:var(--text-muted)">💡 <em>Haga clic en las tarjetas de la derecha para voltearlas y revelar la recomendación de buena práctica basada en evidencia científica.</em></p>
+            </div>
+            <div class="slide-visual" style="max-width:70%; background:transparent; border:none;">
+              <div class="errors-grid">
+                <!-- Card 1 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 1</h4><p>Prohibir frutas.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>Aportan fibra y micronutrientes; modular porción.</p></div>
+                  </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 2</h4><p>Dieta hipocalórica extrema.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>Favorece pérdida de músculo y rebote.</p></div>
+                  </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 3</h4><p>Recetar productos "light".</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>Revisar etiqueta; a veces contienen grasas trans.</p></div>
+                  </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 4</h4><p>Tratar sin fármacos.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>La terapia médica farmacológica es complementaria.</p></div>
+                  </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 5</h4><p>Medir solo glucosa en ayunas.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>La posprandial es más predictora de daño.</p></div>
+                  </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 6</h4><p>Omitir soporte familiar.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>El núcleo familiar es vital para la adherencia.</p></div>
+                  </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 7</h4><p>No enseñar conteo CHO.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>Limita la flexibilidad del paciente DM1.</p></div>
+                  </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 8</h4><p>Flexibilizar hipoglucemias.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>Daño neurológico agudo; tratar de inmediato.</p></div>
+                  </div>
+                </div>
+                <!-- Card 9 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 9</h4><p>No registrar bitácora.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>Sin datos, las intervenciones son ciegas.</p></div>
+                  </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="error-flip-card">
+                  <div class="error-flip-inner">
+                    <div class="error-front"><h4>Error 10</h4><p>Usar metas rígidas.</p></div>
+                    <div class="error-back"><h4>Evidencia</h4><p>Ajustar metas al perfil de fragilidad.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CIERRE: MAPA MENTAL INTEGRADOR -->
+        <div class="slide" id="slide-40">
+          <div class="slide-header">
+            <span class="slide-tag">Cierre</span>
+            <h1 class="slide-title">El Camino de la Estandarización Clínica</h1>
+          </div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <h3>Mapa Mental de Cierre: El Modelo ADIME</h3>
+              <p>Colegas, sinteticemos el aprendizaje. El Proceso de Atención Nutricia (PAN) es un flujo continuo que se traduce en mejores resultados clínicos para personas con diabetes.</p>
+              <div style="background-color:rgba(16,185,129,0.05); padding:10px; border-radius:var(--radius-sm); border-left:4px solid var(--secondary); font-size:0.85rem; margin-bottom:10px;">
+                <strong>Recuerde la secuencia:</strong> Evaluación (A) &rarr; Diagnóstico (D) &rarr; Intervención (I) &rarr; Monitoreo (M&E) &rarr; Mejora de la calidad de vida y control glucémico.
+              </div>
+            </div>
+            <div class="slide-visual">
+              <div class="mindmap-svg-container">
+                <!-- SVG Mind Map -->
+                <svg viewBox="0 0 300 200" width="100%" height="100%">
+                  <!-- Connectors -->
+                  <path d="M150 100 L50 60 M150 100 L250 60 M150 100 L50 140 M150 100 L250 140" stroke="var(--border-color)" stroke-width="2" class="mindmap-branch" />
+                  
+                  <!-- Central Node -->
+                  <g class="mindmap-node" transform="translate(0, 0)">
+                    <rect x="110" y="85" width="80" height="30" rx="6" fill="var(--primary)" />
+                    <text x="150" y="104" fill="white" font-size="10" font-weight="bold" text-anchor="middle">MODELO PAN</text>
+                  </g>
+                  <!-- Node A -->
+                  <g class="mindmap-node" transform="translate(0, 0)">
+                    <circle cx="50" cy="60" r="20" fill="var(--secondary)" />
+                    <text x="50" y="64" fill="white" font-size="10" font-weight="bold" text-anchor="middle">A</text>
+                    <text x="50" y="35" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">Evaluación</text>
+                  </g>
+                  <!-- Node D -->
+                  <g class="mindmap-node" transform="translate(0, 0)">
+                    <circle cx="250" cy="60" r="20" fill="var(--secondary)" />
+                    <text x="250" y="64" fill="white" font-size="10" font-weight="bold" text-anchor="middle">D</text>
+                    <text x="250" y="35" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">Diagnóstico</text>
+                  </g>
+                  <!-- Node I -->
+                  <g class="mindmap-node" transform="translate(0, 0)">
+                    <circle cx="50" cy="140" r="20" fill="var(--accent)" />
+                    <text x="50" y="144" fill="white" font-size="10" font-weight="bold" text-anchor="middle">I</text>
+                    <text x="50" y="172" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">Intervención</text>
+                  </g>
+                  <!-- Node M -->
+                  <g class="mindmap-node" transform="translate(0, 0)">
+                    <circle cx="250" cy="140" r="20" fill="var(--accent)" />
+                    <text x="250" y="144" fill="white" font-size="10" font-weight="bold" text-anchor="middle">M&E</text>
+                    <text x="250" y="172" fill="var(--text-main)" font-size="8" font-weight="bold" text-anchor="middle">Monitoreo</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Controls -->
+      <footer class="bottom-controls">
+        <div class="slide-counter" id="slide-counter">Diapositiva 1 de 40</div>
+        
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-bar" style="width: 2.5%;"></div>
+        </div>
+        
+        <div class="slide-navigation">
+          <button class="btn btn-secondary" id="prev-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Anterior
+          </button>
+          <button class="btn btn-primary" id="next-btn">
+            Siguiente
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- SPEAKER NOTES SIDEBAR (GUION DEL PONENTE) -->
+    <aside class="speaker-panel" id="speaker-panel">
+      <div class="speaker-header">
+        <div class="speaker-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 19v4M8 23h8"></path></svg>
+          Guion del Ponente
+        </div>
+        <button class="btn-icon" id="notes-close-btn" style="color:var(--sidebar-text)" title="Ocultar notes">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="speaker-body">
+        <div class="speaker-notes-content" id="speaker-notes-content">
+          <!-- Dynamically populated speaker notes -->
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

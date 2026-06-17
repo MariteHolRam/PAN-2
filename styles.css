@@ -1,0 +1,1248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+  --accent: #f59e0b;
+  --danger: #ef4444;
+  --background: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #cbd5e1;
+  --border-light: rgba(255, 255, 255, 0.6);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --font-title: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+[data-theme="dark"] {
+  --background: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.85);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.25);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.35);
+  --border-light: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--text-main);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+}
+
+/* Base Presentation Layout */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.presentation-canvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: padding-right 0.3s ease;
+}
+
+/* Header */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  z-index: 10;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-family: var(--font-title);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-name {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, var(--primary), var(--text-main));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: rgba(255,255,255,0.05);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .btn-icon:hover {
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* Speaker Notes Sidebar */
+.speaker-panel {
+  width: 360px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, margin-right 0.3s ease;
+  z-index: 20;
+  position: relative;
+}
+
+.speaker-panel.collapsed {
+  margin-right: -360px;
+  transform: translateX(360px);
+}
+
+.speaker-header {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.speaker-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.speaker-body {
+  flex: 1;
+  padding: 1.2rem 1.5rem;
+  overflow-y: auto;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.speaker-notes-content {
+  animation: fadeIn 0.3s ease;
+}
+
+.speaker-section {
+  margin-bottom: 1.2rem;
+}
+
+.speaker-section-title {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--secondary);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.speaker-prompt {
+  font-style: italic;
+  background: rgba(2, 132, 199, 0.15);
+  border-left: 3px solid var(--primary);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  color: #7dd3fc;
+}
+
+.speaker-script {
+  color: #e2e8f0;
+}
+
+.speaker-script p {
+  margin-bottom: 0.6rem;
+}
+
+/* Slides Deck Container */
+.slides-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0.98) translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  backdrop-filter: blur(12px);
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+/* Slide Elements */
+.slide-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 8px;
+}
+[data-theme="dark"] .slide-header {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.slide-tag {
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.75rem;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+  display: inline-block;
+}
+
+.slide-title {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.slide-content {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.slide-text {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-text h3 {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-main);
+}
+
+.slide-text p {
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.slide-visual {
+  flex: 1;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .slide-visual {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Flow Controls */
+.bottom-controls {
+  padding: 0.8rem 2rem;
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+}
+
+.progress-bar-container {
+  flex: 1;
+  margin: 0 2rem;
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.slide-counter {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.slide-navigation {
+  display: flex;
+  gap: 10px;
+}
+
+/* WIDGETS INTERACTIVOS GENERALES */
+
+.quiz-widget {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  width: 100%;
+}
+
+[data-theme="dark"] .quiz-widget {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.quiz-question {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quiz-option {
+  padding: 10px 14px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .quiz-option {
+  background-color: #1e293b;
+}
+
+.quiz-option:hover {
+  border-color: var(--primary);
+  background-color: rgba(2, 132, 199, 0.05);
+}
+
+.quiz-option.selected {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+}
+
+.quiz-feedback {
+  margin-top: 0.8rem;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left: 4px solid var(--secondary);
+  font-size: 0.85rem;
+  color: var(--text-main);
+  display: none;
+}
+
+/* Diapositiva 2: Encuesta Inicial de Retos */
+.survey-widget {
+  width: 100%;
+  padding: 1rem;
+}
+
+.survey-results {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.survey-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.survey-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.survey-bar-bg {
+  height: 12px;
+  background-color: var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.survey-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  width: 0%;
+  border-radius: 6px;
+  transition: width 0.8s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+/* Diapositiva 5: Tabla Comparativa DM1 vs DM2 */
+.comparison-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+  font-family: var(--font-title);
+  font-weight: 700;
+  background-color: rgba(0,0,0,0.02);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .comparison-table th {
+  background-color: rgba(255,255,255,0.02);
+}
+
+/* Diapositiva 6 y 7: Pathophysiology Simulations */
+.patho-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.patho-stage {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.patho-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.patho-cell {
+  transition: all 0.5s ease;
+}
+
+/* Patho DM1 Immune Attack Animations */
+@keyframes immune-attack {
+  0% { transform: translate(0, 0); opacity: 0.8; }
+  50% { transform: translate(80px, 40px); opacity: 1; }
+  100% { transform: translate(140px, 80px); opacity: 0.5; }
+}
+
+.immune-tcell {
+  animation: immune-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes immune-float {
+  from { transform: translateY(0px) rotate(0deg); }
+  to { transform: translateY(-8px) rotate(5deg); }
+}
+
+.beta-cell-destroyed {
+  fill: #4b5563 !important;
+  stroke: #1f2937 !important;
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: all 0.8s ease;
+}
+
+/* Diapositiva 8: Complicaciones Body Map */
+.bodymap-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-svg {
+  height: 100%;
+  max-height: 320px;
+}
+
+.body-hotspot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(239, 68, 68, 0.75);
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  animation: pulse-hotspot-danger 2s infinite;
+}
+
+.body-hotspot:hover {
+  background-color: var(--accent);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.9);
+  transform: scale(1.15);
+}
+
+@keyframes pulse-hotspot-danger {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.body-info-panel {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: white;
+  font-size: 0.8rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.body-info-panel.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Diapositiva 15: Actividad de Assessment Sorter */
+.sorter-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+
+.sorter-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: rgba(0,0,0,0.02);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  min-height: 60px;
+  border: 1px dashed var(--border-color);
+}
+
+.sorter-bins {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.sorter-bin {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+[data-theme="dark"] .sorter-bin {
+  background: #1e293b;
+}
+
+.sorter-bin-title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+  color: var(--primary);
+}
+
+.sorter-item {
+  padding: 6px 10px;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+[data-theme="dark"] .sorter-item {
+  background-color: #334155;
+  border-color: #475569;
+  color: white;
+}
+
+/* Diapositiva 19: PES Puzzle */
+.puzzle-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.puzzle-slots {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.puzzle-slot {
+  flex: 1;
+  min-height: 75px;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  background-color: rgba(0,0,0,0.01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.puzzle-slot::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--text-muted);
+}
+
+.puzzle-slot.correct {
+  border-color: var(--secondary);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.puzzle-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.puzzle-piece {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background-color: white;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .puzzle-piece {
+  background-color: #1e293b;
+}
+
+.puzzle-piece.placed {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.puzzle-connector {
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* Diapositiva 26: Platillo de Alimentos & Insulina */
+.plate-widget {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 15px;
+}
+
+.plate-interactive-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.plate-canvas-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 8px solid #f1f5f9;
+  background-color: white;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 15px;
+  gap: 5px;
+}
+
+[data-theme="dark"] .plate-canvas-circle {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.plate-food-on-plate {
+  font-size: 1.3rem;
+  animation: bounceIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.plate-food-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.food-select-btn {
+  padding: 8px 6px;
+  border-radius: var(--radius-sm);
+  background: white;
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: var(--text-main);
+  transition: all 0.2s;
+}
+
+[data-theme="dark"] .food-select-btn {
+  background: #1e293b;
+}
+
+.food-select-btn:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.food-select-btn.active {
+  background-color: rgba(2, 132, 199, 0.1);
+  border-color: var(--primary);
+  font-weight: bold;
+}
+
+.plate-calculation-results {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+[data-theme="dark"] .plate-calculation-results {
+  background: #1e293b;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+}
+
+.calc-total {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary);
+  border-bottom: none;
+}
+
+/* Diapositiva 27: Regla del 15 */
+.rule15-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  padding: 0.5rem;
+}
+
+.rule15-step-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .rule15-step-card {
+  background: #1e293b;
+}
+
+.rule15-step-card.active {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateX(5px);
+}
+
+.rule15-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: white;
+  font-family: var(--font-title);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rule15-timer-btn {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* Diapositiva 29: CGM Simulator Dashboard */
+.cgm-simulator {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+  gap: 8px;
+}
+
+[data-theme="dark"] .cgm-simulator {
+  background: #1e293b;
+}
+
+.cgm-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cgm-value-display {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cgm-trend-arrow {
+  font-size: 1.4rem;
+}
+
+.cgm-trend-arrow.up { color: var(--accent); }
+.cgm-trend-arrow.flat { color: var(--secondary); }
+.cgm-trend-arrow.down { color: var(--danger); }
+
+.cgm-graph-area {
+  height: 120px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.cgm-target-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;  /* corresponds to 180 mg/dL */
+  bottom: 20%; /* corresponds to 70 mg/dL */
+  background: rgba(16, 185, 129, 0.12);
+  border-top: 1px dashed rgba(16, 185, 129, 0.4);
+  border-bottom: 1px dashed rgba(16, 185, 129, 0.4);
+}
+
+.cgm-graph-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cgm-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Diapositiva 39: Tarjetas de Errores Frecuentes */
+.errors-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+}
+
+.error-flip-card {
+  perspective: 800px;
+  cursor: pointer;
+  height: 155px;
+}
+
+.error-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
+}
+
+.error-flip-card.flipped .error-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.error-front, .error-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.error-front {
+  background-color: rgba(239, 68, 68, 0.05);
+  border-left: 4px solid var(--danger);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .error-front {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.error-front h4 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+.error-front p {
+  font-size: 0.7rem;
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+.error-back {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-hover));
+  color: white;
+  transform: rotateY(180deg);
+  border: none;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  padding: 8px;
+}
+
+.error-back h4 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  margin-bottom: 3px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 2px;
+  font-size: 0.75rem;
+}
+
+/* Diapositiva 40: Mind Map Final */
+.mindmap-svg-container {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+}
+
+.mindmap-node {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mindmap-node:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.mindmap-branch {
+  stroke-dasharray: 5 5;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+/* Animations */
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  70% { transform: scale(0.9); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Global Animations & Utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Interactive Sliders in cases */
+.slider-group-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  margin: 4px 0;
+}
+
+.slider-group-inline input {
+  flex: 1;
+}
+
+/* Responsive and Slide Sizing */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .speaker-panel {
+    width: 100%;
+    height: 250px;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .speaker-panel.collapsed {
+    margin-right: 0;
+    margin-bottom: -250px;
+    transform: translateY(250px);
+  }
+  .slide {
+    padding: 1.2rem;
+  }
+  .slide-title {
+    font-size: 1.5rem;
+  }
+  .slide-content {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .slide-text {
+    max-width: 100%;
+  }
+  .errors-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
